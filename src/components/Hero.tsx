@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useI18n } from '../lib/i18n'
+import { getAssetPath } from '../lib/config'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -12,7 +13,7 @@ export default function Hero() {
     // Fetch GitHub stars for the button
     const fetchGithubStars = async () => {
       try {
-        const response = await fetch('/data/checkpoint.json')
+        const response = await fetch(getAssetPath('/data/checkpoint.json'))
         const data = await response.json()
         const stars = data.github.stars
         setGithubStars(stars >= 1000 ? (stars / 1000).toFixed(1) + 'k' : stars.toString())
