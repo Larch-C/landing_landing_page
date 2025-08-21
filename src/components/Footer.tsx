@@ -5,7 +5,7 @@ export default function Footer() {
   const { t } = useI18n()
 
   return (
-    <footer className="bg-[var(--light-background)] py-16 pb-8">
+    <footer className="bg-[var(--light-background)] py-16 pb-8 text-[#e9eef9]">
       <div className="container">
         <div className="footer-content flex justify-between mb-10 flex-col md:flex-row gap-8">
           <div className="footer-logo">
@@ -15,10 +15,10 @@ export default function Footer() {
           
           <div className="footer-links flex gap-14 flex-col md:flex-row">
             <div className="footer-links-column">
-              <h3 className="text-lg mb-5 text-[#e6eefc]">{t('footer.resources.title')}</h3>
+              <h3 className="text-lg mb-5 text-[#f4f8ff]">{t('footer.resources.title')}</h3>
               <ul>
                 <li className="mb-2">
-                  <Link className="text-[var(--light-text-color)] hover:text-[#6f92cb]" href="https://docs.astrbot.app">
+                  <Link className="text-[var(--light-text-color)] hover:text-[#cfe0ff]" href="https://docs.astrbot.app">
                     {t('footer.resources.docs')}
                   </Link>
                 </li>
@@ -26,20 +26,20 @@ export default function Footer() {
             </div>
             
             <div className="footer-links-column">
-              <h3 className="text-lg mb-5 text-[#e6eefc]">{t('footer.community.title')}</h3>
+              <h3 className="text-lg mb-5 text-[#f4f8ff]">{t('footer.community.title')}</h3>
               <ul>
                 <li className="mb-2">
-                  <Link className="text-[var(--light-text-color)] hover:text-[#6f92cb]" href="https://github.com/AstrBotDevs/AstrBot">
+                  <Link className="text-[var(--light-text-color)] hover:text-[#cfe0ff]" href="https://github.com/AstrBotDevs/AstrBot">
                     {t('footer.community.github')}
                   </Link>
                 </li>
                 <li className="mb-2">
-                  <Link className="text-[var(--light-text-color)] hover:text-[#6f92cb]" href="https://qm.qq.com/cgi-bin/qm/qr?k=wtbaNx7EioxeaqS9z7RQWVXPIxg2zYr7&jump_from=webapi&authKey=vlqnv/AV2DbJEvGIcxdlNSpfxVy+8vVqijgreRdnVKOaydpc+YSw4MctmEbr0k5">
+                  <Link className="text-[var(--light-text-color)] hover:text-[#cfe0ff]" href="https://qm.qq.com/cgi-bin/qm/qr?k=wtbaNx7EioxeaqS9z7RQWVXPIxg2zYr7&jump_from=webapi&authKey=vlqnv/AV2DbJEvGIcxdlNSpfxVy+8vVqijgreRdnVKOaydpc+YSw4MctmEbr0k5">
                     {t('footer.community.qq')}
                   </Link>
                 </li>
                 <li className="mb-2">
-                  <Link className="text-[var(--light-text-color)] hover:text-[#6f92cb]" href="https://t.me/+hAsD2Ebl5as3NmY1">
+                  <Link className="text-[var(--light-text-color)] hover:text-[#cfe0ff]" href="https://t.me/+hAsD2Ebl5as3NmY1">
                     {t('footer.community.telegram')}
                   </Link>
                 </li>
@@ -47,15 +47,15 @@ export default function Footer() {
             </div>
             
             <div className="footer-links-column">
-              <h3 className="text-lg mb-5 text-[#e6eefc]">{t('footer.support.title')}</h3>
+              <h3 className="text-lg mb-5 text-[#f4f8ff]">{t('footer.support.title')}</h3>
               <ul>
                 <li className="mb-2">
-                  <Link className="text-[var(--light-text-color)] hover:text-[#6f92cb]" href="mailto:soulter@qq.com">
+                  <Link className="text-[var(--light-text-color)] hover:text-[#cfe0ff]" href="mailto:soulter@qq.com">
                     {t('footer.support.contact')}
                   </Link>
                 </li>
                 <li className="mb-2">
-                  <Link className="text-[var(--light-text-color)] hover:text-[#6f92cb]" href="https://github.com/AstrBotDevs/AstrBot/issues">
+                  <Link className="text-[var(--light-text-color)] hover:text-[#cfe0ff]" href="https://github.com/AstrBotDevs/AstrBot/issues">
                     {t('footer.support.issues')}
                   </Link>
                 </li>

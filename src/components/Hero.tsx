@@ -44,8 +44,8 @@ export default function Hero() {
     <div className="hero relative pt-[180px] pb-[120px] text-center overflow-visible mb-[50px]">
       <div className="hero-bg-circle"></div>
       <div className="container relative z-[1]">
-        <h1 className="slogan text-4xl md:text-6xl font-extrabold leading-tight mb-4 text-white drop-shadow-lg">{t('hero.slogan')}</h1>
-        <p className="sub-slogan text-lg md:text-2xl mb-6 text-sky-100/90">{t('hero.subSlogan')}</p>
+        <h1 className="slogan text-4xl md:text-6xl font-extrabold leading-tight mb-4 text-[#f4f8ff] drop-shadow-lg">{t('hero.slogan')}</h1>
+        <p className="sub-slogan text-lg md:text-2xl mb-6 text-[#d8e7ff]">{t('hero.subSlogan')}</p>
 
         <div className="hero-buttons flex gap-4 justify-center mb-[50px]">
           <Link href="#get-started" className="btn btn-primary px-6 py-3 rounded-md bg-sky-600 hover:bg-sky-500 shadow inline-block">

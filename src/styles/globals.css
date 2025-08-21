@@ -7,10 +7,10 @@
     --primary-color: #314473;
     --secondary-color: #51bcdd;
     --accent-color: #FF6B6B;
-    --text-color: #080A44;
-    --light-text-color: #93a3bf;
-    --background-color: #0b1220;
-    --light-background: #0e1729;
+    --text-color: #e9eef9;
+    --light-text-color: #cfe0ff;
+    --background-color: #0f1a2a;
+    --light-background: #132238;
     --border-color: rgba(255,255,255,0.08);
     --shadow-color: rgba(0, 0, 0, 0.25);
 }
@@ -222,7 +222,7 @@ ul { list-style: none; }
 }
 
 /* Sections */
-.section { padding: 80px 0; position: relative; background-color: rgba(14, 23, 41, 0.75); z-index: 2; }
+.section { padding: 80px 0; position: relative; background-color: rgba(19, 34, 56, 0.65); z-index: 2; }
 
 .section#features {
     border-top-left-radius: 30px;
@@ -661,9 +661,7 @@ footer {
 }
 
 /* 社区数据统计 */
-.stats-section {
-    background-color: rgba(14, 23, 41, 0.75);
-}
+.stats-section { background-color: rgba(19, 34, 56, 0.65); }
 
 .stats-grid {
     max-width: 1200px;
@@ -1035,7 +1033,7 @@ html[lang="ja-JP"] {
     inset: 0;
     overflow: hidden;
     z-index: -10;
-    background: linear-gradient(to bottom, #1b2a47 0%, #0e1729 60%, #0a1120 100%);
+    background: linear-gradient(to bottom, #28446f 0%, #1a2f54 60%, #132238 100%);
 }
 
 .stars, .stars2, .stars3 {
