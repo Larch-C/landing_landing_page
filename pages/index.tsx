@@ -9,6 +9,7 @@ import PluginsSection from '../src/components/PluginsSection'
 import CommunityStats from '../src/components/CommunityStats'
 import FeaturesSection from '../src/components/FeaturesSection'
 import GetStartedSection from '../src/components/GetStartedSection'
+import ScrollSections from '../src/components/ScrollSections'
 
 interface HomeProps {
   githubData: {
@@ -38,10 +39,15 @@ export default function Home({ githubData, pluginsData }: HomeProps) {
       </Head>
 
       <Hero />
-      <PlatformTabs />
-      <ModelProviders />
-      <PluginsSection pluginsData={pluginsData} />
-      <CommunityStats githubData={githubData} />
+      <ScrollSections
+        sections={[
+          { id: 'platforms', title: t('platforms.title'), content: <PlatformTabs /> },
+          { id: 'models', title: t('models.title'), content: <ModelProviders /> },
+          { id: 'plugins', title: t('plugins.title'), content: <PluginsSection pluginsData={pluginsData} /> },
+          { id: 'community', title: t('community.title'), content: <CommunityStats githubData={githubData} /> },
+          { id: 'features', title: t('features.title'), content: <FeaturesSection /> },
+        ]}
+      />
       <GetStartedSection />
     </Layout>
   )
