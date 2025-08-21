@@ -1,12 +1,12 @@
 // Configuration for different deployment environments
 const isProd = process.env.NODE_ENV === 'production'
-const isVercel = Boolean(process.env.VERCEL)
 const repoName = 'landing_landing_page'
+const explicitBase = process.env.NEXT_PUBLIC_BASE_PATH || ''
 
 export const config = {
-  // Prefer runtime env injected from next.config.js so client and server match
-  basePath: process.env.NEXT_PUBLIC_BASE_PATH || (isProd && !isVercel ? `/${repoName}` : ''),
-  assetPrefix: (process.env.NEXT_PUBLIC_BASE_PATH ? `${process.env.NEXT_PUBLIC_BASE_PATH}/` : undefined) || (isProd && !isVercel ? `/${repoName}/` : ''),
+  // Use explicit base for non-root deployments; default empty for Vercel root
+  basePath: explicitBase,
+  assetPrefix: explicitBase ? (explicitBase.endsWith('/') ? explicitBase : `${explicitBase}/`) : '',
 }
 
 export function getAssetPath(path: string): string {
