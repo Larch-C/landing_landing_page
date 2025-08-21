@@ -39,7 +39,8 @@ const translations: Record<string, Translations> = {
     },
     plugins: {
       title: '丰富的插件生态',
-      subtitle: '众多插件满足各种场景需求，轻松扩展机器人功能'
+      subtitle: '众多插件满足各种场景需求，轻松扩展机器人功能',
+      authorLabel: '作者'
     },
     community: {
       title: '高度活跃的社区',
@@ -98,6 +99,8 @@ const translations: Record<string, Translations> = {
         contact: '联系我们',
         issues: '反馈问题'
       },
+      partnersLabel: '合作伙伴',
+      friendLinksLabel: '友情链接',
       copyright: '&copy; 2025 AstrBot. 保留所有权利。本项目受 AGPL-v3 开源许可协议保护。',
       love: 'Made with ❤️ forever.'
     }
@@ -136,7 +139,8 @@ const translations: Record<string, Translations> = {
     },
     plugins: {
       title: 'Rich Plugin Ecosystem',
-      subtitle: 'Numerous plugins meet various scenario needs and easily extend robot functions'
+      subtitle: 'Numerous plugins meet various scenario needs and easily extend robot functions',
+      authorLabel: 'Author'
     },
     community: {
       title: 'Highly Active Community',
@@ -195,6 +199,8 @@ const translations: Record<string, Translations> = {
         contact: 'Contact Us',
         issues: 'Report Issues'
       },
+      partnersLabel: 'Partners',
+      friendLinksLabel: 'Friend Links',
       copyright: '&copy; 2025 AstrBot. All rights reserved. This project is protected by AGPL-v3 open source license.',
       love: 'Made with ❤️ forever.'
     }
@@ -233,7 +239,8 @@ const translations: Record<string, Translations> = {
     },
     plugins: {
       title: '豊富なプラグインエコシステム',
-      subtitle: '多数のプラグインがさまざまなシナリオのニーズを満たし、ロボット機能を簡単に拡張'
+      subtitle: '多数のプラグインがさまざまなシナリオのニーズを満たし、ロボット機能を簡単に拡張',
+      authorLabel: '作者'
     },
     community: {
       title: '非常に活発なコミュニティ',
@@ -292,6 +299,8 @@ const translations: Record<string, Translations> = {
         contact: 'お問い合わせ',
         issues: '問題を報告'
       },
+      partnersLabel: 'パートナー',
+      friendLinksLabel: 'フレンドリンク',
       copyright: '&copy; 2025 AstrBot. 全著作権所有。このプロジェクトは AGPL-v3 オープンソースライセンスで保護されています。',
       love: '❤️ で永遠に作られました。'
     }

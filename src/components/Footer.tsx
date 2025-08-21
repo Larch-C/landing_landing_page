@@ -67,7 +67,7 @@ export default function Footer() {
         <div className="copyright text-center pt-8 border-t border-[var(--border-color)] text-[var(--light-text-color)]">
           <p dangerouslySetInnerHTML={{ __html: t('footer.copyright') }} />
           <p className="mt-2">
-            合作伙伴: <Link 
+            {t('footer.partnersLabel')}: <Link 
               href="https://www.rainyun.com/NjY3OTQ1_" 
               target="_blank"
               className="underline"
@@ -76,7 +76,7 @@ export default function Footer() {
             </Link>
           </p>
           <p className="mt-2">
-            友情链接: <Link 
+            {t('footer.friendLinksLabel')}: <Link 
               href="https://ustb-806.github.io/" 
               target="_blank"
               className="underline"

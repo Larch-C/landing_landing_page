@@ -35,7 +35,7 @@ export default function PluginsSection({ pluginsData }: PluginsSectionProps) {
                   <div className="plugin-header">
                     <div className="plugin-name font-semibold text-sm text-[var(--text-color)] truncate">{displayName}</div>
                   </div>
-                  <div className="plugin-author text-xs text-[var(--light-text-color)] mb-2">作者: {data.author}</div>
+                  <div className="plugin-author text-xs text-[var(--light-text-color)] mb-2">{t('plugins.authorLabel')}: {data.author}</div>
                   <div className="plugin-desc text-[13px] leading-tight text-[var(--light-text-color)] overflow-hidden [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical] mb-3">{data.desc}</div>
                 </div>
                 <div>
