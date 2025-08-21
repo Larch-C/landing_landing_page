@@ -9,7 +9,6 @@ import PluginsSection from '../src/components/PluginsSection'
 import CommunityStats from '../src/components/CommunityStats'
 import FeaturesSection from '../src/components/FeaturesSection'
 import GetStartedSection from '../src/components/GetStartedSection'
-import ScrollShowcase from '../src/components/ScrollShowcase'
 
 interface HomeProps {
   githubData: {
@@ -39,9 +38,6 @@ export default function Home({ githubData, pluginsData }: HomeProps) {
       </Head>
 
       <Hero />
-      {/* Scroll overview shows: Platforms -> Community -> Get Started */}
-      <ScrollShowcase />
-      {/* Keep details without duplicating overview order */}
       <PlatformTabs />
       <ModelProviders />
       <PluginsSection pluginsData={pluginsData} />
