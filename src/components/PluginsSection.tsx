@@ -30,7 +30,7 @@ export default function PluginsSection({ pluginsData }: PluginsSectionProps) {
             const tags = data.tags || []
             
             return (
-              <div key={name} className="plugin-item bg-white border border-[#f0f0f0] p-4 transition flex flex-col justify-between w-[200px] h-[180px] overflow-hidden hover:bg-[#f9f9f9] hover:z-10 hover:scale-[1.05] hover:shadow-md">
+              <div key={name} className="plugin-item bg-white/95 border border-white/30 p-4 transition flex flex-col justify-between w-[200px] h-[180px] overflow-hidden hover:bg-white hover:z-10 hover:scale-[1.05] hover:shadow-md">
                 <div>
                   <div className="plugin-header">
                     <div className="plugin-name font-semibold text-sm text-[var(--text-color)] truncate">{displayName}</div>

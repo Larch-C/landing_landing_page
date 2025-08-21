@@ -28,7 +28,7 @@ export default function CommunityStats({ githubData }: CommunityStatsProps) {
         </p>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-[1200px] mx-auto">
-          <div className="bg-[var(--background-color)]/60 rounded-lg p-10 text-center transition hover:-translate-y-2 hover:shadow-xl">
+          <div className="bg-black/20 rounded-lg p-10 text-center transition hover:-translate-y-2 hover:shadow-xl">
             <div className="stats-icon text-3xl text-[#cfe0ff] mb-5 h-[60px] flex items-center justify-center">
               <i className="fas fa-star"></i>
             </div>
@@ -37,7 +37,7 @@ export default function CommunityStats({ githubData }: CommunityStatsProps) {
             <p className="text-[#cfe0ff]">{t('community.stats.starsDesc')}</p>
           </div>
           
-          <div className="bg-[var(--background-color)]/60 rounded-lg p-10 text-center transition hover:-translate-y-2 hover:shadow-xl">
+          <div className="bg-black/20 rounded-lg p-10 text-center transition hover:-translate-y-2 hover:shadow-xl">
             <div className="stats-icon text-3xl text-[#cfe0ff] mb-5 h-[60px] flex items-center justify-center">
               <i className="fas fa-code-branch"></i>
             </div>
@@ -46,7 +46,7 @@ export default function CommunityStats({ githubData }: CommunityStatsProps) {
             <p className="text-[#cfe0ff]">{t('community.stats.forksDesc')}</p>
           </div>
           
-          <div className="bg-[var(--background-color)]/60 rounded-lg p-10 text-center transition hover:-translate-y-2 hover:shadow-xl">
+          <div className="bg-black/20 rounded-lg p-10 text-center transition hover:-translate-y-2 hover:shadow-xl">
             <div className="stats-icon text-3xl text-[#cfe0ff] mb-5 h-[60px] flex items-center justify-center">
               <i className="fas fa-users"></i>
             </div>
@@ -55,7 +55,7 @@ export default function CommunityStats({ githubData }: CommunityStatsProps) {
             <p className="text-[#cfe0ff]">{t('community.stats.contributorsDesc')}</p>
           </div>
           
-          <div className="bg-[var(--background-color)]/60 rounded-lg p-10 text-center transition hover:-translate-y-2 hover:shadow-xl">
+          <div className="bg-black/20 rounded-lg p-10 text-center transition hover:-translate-y-2 hover:shadow-xl">
             <div className="stats-icon text-3xl text-[#cfe0ff] mb-5 h-[60px] flex items-center justify-center">
               <i className="fas fa-puzzle-piece"></i>
             </div>

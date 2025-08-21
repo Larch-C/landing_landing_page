@@ -28,9 +28,9 @@ export default function FeaturesSection() {
         <h2 className="section-title text-center mb-10 text-3xl font-bold text-[#e6eefc]">{t('features.title')}</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-[1200px] mx-auto">
           {features.map((feature, index) => (
-            <div key={index} className="bg-[var(--light-background)]/70 rounded-lg p-6 shadow-soft hover:-translate-y-1 transition">
-              <h3 className="mb-3 text-[#b7c9e7] font-semibold">{feature.title}</h3>
-              <p className="text-[var(--light-text-color)]">{feature.description}</p>
+            <div key={index} className="rounded-lg p-6 shadow-soft hover:-translate-y-1 transition bg-white/10">
+              <h3 className="mb-3 text-[#f4f8ff] font-semibold drop-shadow">{feature.title}</h3>
+              <p className="text-[#cfe0ff]">{feature.description}</p>
             </div>
           ))}
         </div>

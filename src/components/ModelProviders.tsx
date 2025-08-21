@@ -42,7 +42,7 @@ export default function ModelProviders() {
         <h2 className="section-title mb-4 text-center text-3xl font-bold text-[#e6eefc]">
           {t('models.title')}
         </h2>
-        <p className="text-center mb-4 text-[var(--light-text-color)]">
+        <p className="text-center mb-4 text-[#dbe9ff]">
           {t('models.subtitle')}
         </p>
         

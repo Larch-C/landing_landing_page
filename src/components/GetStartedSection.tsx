@@ -8,7 +8,7 @@ export default function GetStartedSection() {
     <section id="get-started" className="section">
       <div className="container">
         <h2 className="section-title text-center text-3xl font-bold text-[#e6eefc]">{t('getStarted.title')}</h2>
-        <p className="text-center mb-10 text-[var(--light-text-color)]">{t('getStarted.subtitle')}</p>
+        <p className="text-center mb-10 text-[#dbe9ff]">{t('getStarted.subtitle')}</p>
         <div className="installation-guide max-w-[600px] mx-auto text-center">
           <Link 
             href="https://docs.astrbot.app" 
