@@ -19,32 +19,43 @@
 
 /* Global base tweaks layered on top of Tailwind */
 body {
-    @apply antialiased bg-[var(--background-color)] font-sans;
+    @apply antialiased bg-[var(--background-color)];
     color: var(--text-color);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-feature-settings: "liga" 1, "kern" 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold tracking-tight;
+    font-weight: 600;
+    letter-spacing: -0.025em;
     line-height: 1.2;
 }
 
-h1 { @apply text-4xl md:text-6xl; }
-h2 { @apply text-3xl md:text-5xl; }
-h3 { @apply text-2xl md:text-4xl; }
-h4 { @apply text-xl md:text-3xl; }
-h5 { @apply text-lg md:text-2xl; }
-h6 { @apply text-base md:text-xl; }
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.875rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.125rem; }
+h6 { font-size: 1rem; }
+
+@media (min-width: 768px) {
+    h1 { font-size: 3.75rem; }
+    h2 { font-size: 3rem; }
+    h3 { font-size: 2.25rem; }
+    h4 { font-size: 1.875rem; }
+    h5 { font-size: 1.5rem; }
+    h6 { font-size: 1.25rem; }
+}
 
 p {
-    @apply leading-relaxed;
+    line-height: 1.625;
     color: var(--light-text-color);
 }
 
 a { 
-    @apply transition-all duration-300 hover:text-primary-400; 
+    transition: all 0.3s ease;
     color: var(--primary-color); 
 }
 a:hover { 
