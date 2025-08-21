@@ -34,7 +34,8 @@ const translations: Record<string, Translations> = {
       slack: 'Slack',
       discord: 'Discord',
       kook: 'KOOK',
-      vocechat: 'VoceChat'
+      vocechat: 'VoceChat',
+      demoAlt: '平台演示'
     },
     models: {
       title: '支持主流模型提供商',
@@ -137,7 +138,8 @@ const translations: Record<string, Translations> = {
       slack: 'Slack',
       discord: 'Discord',
       kook: 'KOOK',
-      vocechat: 'VoceChat'
+      vocechat: 'VoceChat',
+      demoAlt: 'platform demo'
     },
     models: {
       title: 'Support for Mainstream Model Providers',
@@ -240,7 +242,8 @@ const translations: Record<string, Translations> = {
       slack: 'Slack',
       discord: 'Discord',
       kook: 'KOOK',
-      vocechat: 'VoceChat'
+      vocechat: 'VoceChat',
+      demoAlt: 'プラットフォームデモ'
     },
     models: {
       title: '主流モデルプロバイダーをサポート',

@@ -69,7 +69,7 @@ export default function PlatformTabs() {
                   {platform.image ? (
                     <Image 
                       src={platform.image} 
-                      alt={`${platform.name}平台演示`}
+                      alt={`${platform.name}${' '}${t('platforms.demoAlt')}`}
                       width={600}
                       height={400}
                     />
