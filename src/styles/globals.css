@@ -912,7 +912,13 @@ footer {
     }
     
     .hero-image {
-        clip-path: inset(0 0 40% 0);
+        clip-path: none;
+        -webkit-clip-path: none;
+        mask-image: none;
+        -webkit-mask-image: none;
+        transform: none !important;
+        height: auto;
+        width: 100%;
     }
     
     .section#features {
