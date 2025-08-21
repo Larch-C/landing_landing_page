@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { useI18n } from '../src/lib/i18n'
 import Layout from '../src/components/Layout'
 import Hero from '../src/components/Hero'
+import ScrollTriggeredSections from '../src/components/ScrollTriggeredSections'
 import PlatformTabs from '../src/components/PlatformTabs'
 import ModelProviders from '../src/components/ModelProviders'
 import PluginsSection from '../src/components/PluginsSection'
@@ -38,6 +39,7 @@ export default function Home({ githubData, pluginsData }: HomeProps) {
       </Head>
 
       <Hero />
+      <ScrollTriggeredSections />
       <PlatformTabs />
       <ModelProviders />
       <PluginsSection pluginsData={pluginsData} />

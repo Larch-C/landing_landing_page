@@ -9,11 +9,11 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div className="min-h-screen relative font-sans text-gray-100">
+    <div className="min-h-screen relative font-sans text-steel-100 overflow-x-hidden">
       <ParallaxBackground />
       <div className="relative z-10">
         <Header />
-        <main>
+        <main className="relative">
           {children}
         </main>
         <Footer />

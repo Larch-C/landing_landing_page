@@ -40,41 +40,64 @@ export default function PlatformTabs() {
   }, [activeTab])
 
   return (
-    <section id="features" className="section">
-      <div className="container">
-        <h2 className="section-title text-center text-3xl font-bold text-[#e6eefc]">{t('platforms.title')}</h2>
-        <div className="platform-tabs mx-auto">
-          <div className="tabs-nav flex flex-wrap justify-center relative rounded-lg mb-8 bg-black/5 p-1.5">
+    <section id="features" className="relative py-24 overflow-hidden">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-steel-100 to-primary-200 bg-clip-text text-transparent mb-6">
+            {t('platforms.title')}
+          </h2>
+          <p className="text-xl text-steel-300 max-w-3xl mx-auto mb-8">
+            {t('platforms.subtitle') || '支持多个主流平台，一次部署，多平台使用'}
+          </p>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-steel-400 mx-auto rounded-full" />
+        </div>
+        
+        <div className="platform-tabs max-w-7xl mx-auto">
+          <div className="tabs-nav flex flex-wrap justify-center relative rounded-2xl mb-12 bg-steel-900/60 backdrop-blur-sm border border-steel-700/50 p-2">
+            <div 
+              className="absolute bg-gradient-to-r from-primary-600 to-primary-700 rounded-xl transition-all duration-300 ease-out shadow-glow"
+              style={indicatorStyle}
+            />
             {platforms.map(platform => (
               <button
                 key={platform.id}
-                className={`tab-button ${activeTab === platform.id ? 'active' : ''} px-5 py-3 rounded-md font-medium text-[15px] text-[var(--light-text-color)] hover:text-[#6f92cb]`}
+                className={`relative z-10 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 ${
+                  activeTab === platform.id 
+                    ? 'text-white' 
+                    : 'text-steel-300 hover:text-steel-100'
+                }`}
                 data-platform={platform.id}
                 onClick={() => setActiveTab(platform.id)}
               >
                 {platform.name}
               </button>
             ))}
-            <div className="tab-indicator absolute h-[calc(100%-10px)] bg-white rounded-md shadow transition-all" style={indicatorStyle}></div>
           </div>
           
-          <div className="tabs-content relative overflow-hidden min-h-[400px]">
+          <div className="tabs-content relative overflow-hidden min-h-[500px] bg-steel-900/20 backdrop-blur-sm rounded-2xl border border-steel-700/30 p-8">
             {platforms.map(platform => (
               <div
                 key={platform.id}
-                className={`tab-pane ${activeTab === platform.id ? 'active' : ''} absolute w-full opacity-0 translate-x-5 transition-all pointer-events-none flex justify-center ${activeTab === platform.id ? 'relative opacity-100 translate-x-0 pointer-events-auto' : ''}`}
+                className={`tab-pane absolute inset-8 transition-all duration-500 ${
+                  activeTab === platform.id 
+                    ? 'opacity-100 translate-y-0 pointer-events-auto' 
+                    : 'opacity-0 translate-y-4 pointer-events-none'
+                }`}
                 id={`tab-${platform.id}`}
               >
-                <div className="platform-image overflow-hidden transition max-w-full flex justify-center">
+                <div className="platform-image overflow-hidden rounded-xl shadow-steel flex justify-center">
                   {platform.image ? (
                     <Image 
                       src={platform.image} 
                       alt={`${platform.name}${' '}${t('platforms.demoAlt')}`}
-                      width={600}
-                      height={400}
+                      width={700}
+                      height={450}
+                      className="rounded-xl shadow-2xl border border-steel-600/30 hover:scale-[1.02] transition-transform duration-500"
                     />
                   ) : (
-                    <span>{platform.content}</span>
+                    <div className="flex items-center justify-center h-64 text-steel-300 text-lg">
+                      {platform.content}
+                    </div>
                   )}
                 </div>
               </div>
