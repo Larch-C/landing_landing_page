@@ -62,14 +62,14 @@ export default function Header() {
       <div className="container flex items-center justify-between h-[70px]">
         <div className="logo flex items-center">
           <Image
-            className="brightness-110 rounded-md"
+            className="relative z-10 brightness-110"
             src={getAssetPath("/assets/logo.svg")}
             alt="AstrBot"
             width={150}
             height={40}
             style={{
-              boxShadow:
-                '0 0 10px rgba(255,255,255,0.30), 0 0 22px rgba(170,210,255,0.22), 0 8px 24px rgba(0,0,0,0.35)'
+              filter:
+                'drop-shadow(0 0 6px rgba(255,255,255,0.35)) drop-shadow(0 0 14px rgba(170,210,255,0.18))'
             }}
           />
         </div>
