@@ -9,13 +9,15 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div className="min-h-screen relative font-sans text-gray-100 bg-gradient-to-b from-sky-800 via-sky-700 to-sky-600">
+    <div className="min-h-screen relative font-sans text-gray-100">
       <ParallaxBackground />
-      <Header />
-      <main>
-        {children}
-      </main>
-      <Footer />
+      <div className="relative z-10">
+        <Header />
+        <main>
+          {children}
+        </main>
+        <Footer />
+      </div>
     </div>
   )
 }

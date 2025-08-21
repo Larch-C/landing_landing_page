@@ -64,7 +64,7 @@ export default function Hero() {
           </Link>
         </div>
 
-        <div className="trendshift-badge my-5 text-center">
+        <div className="trendshift-badge my-5 text-center flex items-center justify-center">
           <Link href="https://trendshift.io/api/badge/repositories/12875">
             <Image 
               src="https://trendshift.io/api/badge/repositories/12875" 

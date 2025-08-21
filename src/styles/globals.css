@@ -222,7 +222,7 @@ ul { list-style: none; }
 }
 
 /* Sections */
-.section { padding: 80px 0; position: relative; background-color: rgba(19, 34, 56, 0.65); z-index: 2; }
+.section { padding: 80px 0; position: relative; background-color: rgba(19, 34, 56, 0.45); z-index: 2; }
 
 .section#features {
     border-top-left-radius: 30px;
@@ -1033,41 +1033,48 @@ html[lang="ja-JP"] {
     inset: 0;
     overflow: hidden;
     z-index: -10;
-    background: linear-gradient(to bottom, #28446f 0%, #1a2f54 60%, #132238 100%);
+    background: linear-gradient(to bottom, #2e4f83 0%, #24446f 60%, #1a2f54 100%);
 }
 
 .stars, .stars2, .stars3 {
     position: absolute;
     inset: -50% -50% -50% -50%;
     background-repeat: repeat;
-    background-size: 200px 200px;
+    background-size: 220px 220px;
     pointer-events: none;
 }
 
 /* Generate star dots via radial-gradients */
 .stars {
     background-image:
-      radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.9) 50%, transparent 60%),
-      radial-gradient(1px 1px at 100px 150px, rgba(255,255,255,0.8) 50%, transparent 60%),
-      radial-gradient(1.5px 1.5px at 180px 60px, rgba(255,255,255,0.8) 50%, transparent 60%),
-      radial-gradient(1px 1px at 60px 190px, rgba(255,255,255,0.8) 50%, transparent 60%);
+      radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.95) 55%, transparent 60%),
+      radial-gradient(1.5px 1.5px at 100px 150px, rgba(255,255,255,0.9) 55%, transparent 60%),
+      radial-gradient(1.5px 1.5px at 180px 60px, rgba(255,255,255,0.9) 55%, transparent 60%),
+      radial-gradient(1px 1px at 60px 190px, rgba(255,255,255,0.9) 55%, transparent 60%),
+      radial-gradient(1px 1px at 140px 20px, rgba(255,255,255,0.85) 55%, transparent 60%),
+      radial-gradient(2px 2px at 200px 120px, rgba(255,255,255,0.95) 55%, transparent 60%);
     animation: twinkle 3s ease-in-out infinite;
 }
 .stars2 {
     background-image:
-      radial-gradient(1.5px 1.5px at 50px 80px, rgba(255,255,255,0.9) 50%, transparent 60%),
-      radial-gradient(1px 1px at 120px 40px, rgba(255,255,255,0.7) 50%, transparent 60%),
-      radial-gradient(1px 1px at 200px 100px, rgba(255,255,255,0.7) 50%, transparent 60%),
-      radial-gradient(1.5px 1.5px at 30px 160px, rgba(255,255,255,0.7) 50%, transparent 60%);
+      radial-gradient(1.5px 1.5px at 50px 80px, rgba(255,255,255,0.9) 55%, transparent 60%),
+      radial-gradient(1px 1px at 120px 40px, rgba(255,255,255,0.8) 55%, transparent 60%),
+      radial-gradient(1px 1px at 200px 100px, rgba(255,255,255,0.8) 55%, transparent 60%),
+      radial-gradient(1.5px 1.5px at 30px 160px, rgba(255,255,255,0.85) 55%, transparent 60%),
+      radial-gradient(1px 1px at 170px 180px, rgba(255,255,255,0.85) 55%, transparent 60%);
     animation: twinkle 4s ease-in-out infinite;
-    transform: translateY(-5vh);
 }
 .stars3 {
     background-image:
-      radial-gradient(1px 1px at 70px 50px, rgba(255,255,255,0.9) 50%, transparent 60%),
-      radial-gradient(1px 1px at 140px 120px, rgba(255,255,255,0.7) 50%, transparent 60%),
-      radial-gradient(1.5px 1.5px at 10px 180px, rgba(255,255,255,0.8) 50%, transparent 60%),
-      radial-gradient(1px 1px at 190px 170px, rgba(255,255,255,0.6) 50%, transparent 60%);
+      radial-gradient(1px 1px at 70px 50px, rgba(255,255,255,0.95) 55%, transparent 60%),
+      radial-gradient(1px 1px at 140px 120px, rgba(255,255,255,0.85) 55%, transparent 60%),
+      radial-gradient(1.5px 1.5px at 10px 180px, rgba(255,255,255,0.9) 55%, transparent 60%),
+      radial-gradient(1px 1px at 190px 170px, rgba(255,255,255,0.8) 55%, transparent 60%),
+      radial-gradient(1px 1px at 30px 20px, rgba(255,255,255,0.85) 55%, transparent 60%);
     animation: twinkle 5s ease-in-out infinite;
-    transform: translateY(-10vh);
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 0.4; }
 }
