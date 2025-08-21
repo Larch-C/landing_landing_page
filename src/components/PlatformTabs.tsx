@@ -42,30 +42,30 @@ export default function PlatformTabs() {
   return (
     <section id="features" className="section">
       <div className="container">
-        <h2 className="section-title">{t('platforms.title')}</h2>
-        <div className="platform-tabs">
-          <div className="tabs-nav">
+        <h2 className="section-title text-center text-3xl font-bold text-[#e6eefc]">{t('platforms.title')}</h2>
+        <div className="platform-tabs mx-auto">
+          <div className="tabs-nav flex flex-wrap justify-center relative rounded-lg mb-8 bg-black/5 p-1.5">
             {platforms.map(platform => (
               <button
                 key={platform.id}
-                className={`tab-button ${activeTab === platform.id ? 'active' : ''}`}
+                className={`tab-button ${activeTab === platform.id ? 'active' : ''} px-5 py-3 rounded-md font-medium text-[15px] text-[var(--light-text-color)] hover:text-[#6f92cb]`}
                 data-platform={platform.id}
                 onClick={() => setActiveTab(platform.id)}
               >
                 {platform.name}
               </button>
             ))}
-            <div className="tab-indicator" style={indicatorStyle}></div>
+            <div className="tab-indicator absolute h-[calc(100%-10px)] bg-white rounded-md shadow transition-all" style={indicatorStyle}></div>
           </div>
           
-          <div className="tabs-content">
+          <div className="tabs-content relative overflow-hidden min-h-[400px]">
             {platforms.map(platform => (
               <div
                 key={platform.id}
-                className={`tab-pane ${activeTab === platform.id ? 'active' : ''}`}
+                className={`tab-pane ${activeTab === platform.id ? 'active' : ''} absolute w-full opacity-0 translate-x-5 transition-all pointer-events-none flex justify-center ${activeTab === platform.id ? 'relative opacity-100 translate-x-0 pointer-events-auto' : ''}`}
                 id={`tab-${platform.id}`}
               >
-                <div className="platform-image">
+                <div className="platform-image overflow-hidden transition max-w-full flex justify-center">
                   {platform.image ? (
                     <Image 
                       src={platform.image} 

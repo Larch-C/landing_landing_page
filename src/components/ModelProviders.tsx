@@ -39,29 +39,25 @@ export default function ModelProviders() {
   return (
     <section className="section" style={{ paddingTop: 0 }}>
       <div className="container">
-        <h2 className="section-title" style={{ marginBottom: '16px' }}>
+        <h2 className="section-title mb-4 text-center text-3xl font-bold text-[#e6eefc]">
           {t('models.title')}
         </h2>
-        <p style={{ 
-          textAlign: 'center', 
-          marginBottom: '16px', 
-          color: 'var(--light-text-color)' 
-        }}>
+        <p className="text-center mb-4 text-[var(--light-text-color)]">
           {t('models.subtitle')}
         </p>
         
-        <div className="model-providers-container">
-          <div className="model-providers-grid">
+        <div className="model-providers-container max-w-[900px] mx-auto py-5">
+          <div className="model-providers-grid grid grid-cols-[repeat(auto-fill,minmax(120px,1fr))] rounded-xl overflow-hidden shadow-soft">
             {providers.map((provider, index) => {
               const ProviderItem = (
-                <div key={index} className="provider-item">
+                <div key={index} className="provider-item bg-white flex flex-col items-center justify-center py-5 px-2 border border-[#f0f0f0] transition hover:bg-[#f9f9f9] hover:-translate-y-0.5">
                   <Image 
                     src={provider.icon} 
                     alt={provider.name}
                     width={32}
                     height={32}
                   />
-                  <span>{provider.name}</span>
+                  <span className="text-center text-xs text-[var(--light-text-color)] font-medium mt-2">{provider.name}</span>
                 </div>
               )
 
@@ -73,8 +69,8 @@ export default function ModelProviders() {
                 ProviderItem
               )
             })}
-            <div className="provider-item">
-              <span>...</span>
+            <div className="provider-item bg-white flex items-center justify-center py-5 px-2 border border-[#f0f0f0]">
+              <span className="text-[var(--light-text-color)]">...</span>
             </div>
           </div>
         </div>
