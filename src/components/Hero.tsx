@@ -48,12 +48,12 @@ export default function Hero() {
         <p className="sub-slogan text-lg md:text-2xl mb-6 text-[#e6f0ff] drop-shadow">{t('hero.subSlogan')}</p>
 
         <div className="hero-buttons flex gap-4 justify-center mb-[50px]">
-          <Link href="#get-started" className="btn btn-primary px-6 py-3 rounded-md bg-sky-600 hover:bg-sky-500 shadow inline-block">
+          <Link href="#get-started" className="btn btn-primary px-6 py-3 rounded-md bg-[var(--primary-color)] hover:bg-[var(--secondary-color)] shadow inline-block">
             {t('hero.startButton')}
           </Link>
           <Link 
             href="https://github.com/AstrBotDevs/AstrBot" 
-            className="btn btn-secondary github-btn px-4 py-3 rounded-md bg-transparent border border-sky-400 hover:bg-sky-800/40 inline-flex items-center gap-2"
+            className="btn btn-secondary github-btn px-4 py-3 rounded-md bg-transparent border border-[var(--secondary-color)] hover:bg-white/10 inline-flex items-center gap-2"
             target="_blank"
           >
             <i className="fab fa-github"></i> 
