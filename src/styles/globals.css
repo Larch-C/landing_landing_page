@@ -596,6 +596,7 @@ footer {
     width: 200px;
     height: 180px;
     overflow: hidden;
+    border-radius: 12px;
 }
 
 .plugin-item:hover {
@@ -672,7 +673,7 @@ footer {
 }
 
 /* 社区数据统计 */
-.stats-section { background-color: rgba(19, 34, 56, 0.65); }
+.stats-section { background-color: rgba(19, 34, 56, 0.5); }
 
 .stats-grid {
     max-width: 1200px;
