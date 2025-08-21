@@ -58,7 +58,7 @@ export default function Header() {
   }
 
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''} bg-sky-900/70 backdrop-blur-md border-b border-sky-800`}>
       <div className="container flex items-center justify-between h-[70px]">
         <div className="logo flex items-center">
           <Image src={getAssetPath("/assets/logo.svg")} alt="AstrBot" width={150} height={40} />
@@ -66,17 +66,17 @@ export default function Header() {
         
         <ul className={`nav-links ${isMenuOpen ? 'active' : ''} hidden md:flex gap-8 items-center`}>
           <li>
-            <Link className="text-[var(--light-text-color)] hover:text-[#6f92cb]" href="https://docs.astrbot.app" onClick={closeMenu}>
+            <Link className="text-[var(--light-text-color)] hover:text-sky-300" href="https://docs.astrbot.app" onClick={closeMenu}>
               {t('nav.quickStart')}
             </Link>
           </li>
           <li>
-            <Link className="text-[var(--light-text-color)] hover:text-[#6f92cb]" href="https://plugins.astrbot.app/" onClick={closeMenu}>
+            <Link className="text-[var(--light-text-color)] hover:text-sky-300" href="https://plugins.astrbot.app/" onClick={closeMenu}>
               {t('nav.plugin')}
             </Link>
           </li>
           <li>
-            <Link className="text-[var(--light-text-color)] hover:text-[#6f92cb]" href="https://github.com/AstrBotDevs/AstrBot" onClick={closeMenu}>
+            <Link className="text-[var(--light-text-color)] hover:text-sky-300" href="https://github.com/AstrBotDevs/AstrBot" onClick={closeMenu}>
               {t('nav.github')}
             </Link>
           </li>
