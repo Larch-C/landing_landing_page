@@ -41,30 +41,28 @@ export default function Hero() {
   }, [])
 
   return (
-    <div className="hero">
-      <div className="hero-bg-circle"></div>
-      <div className="container">
-        <h1 className="slogan">{t('hero.slogan')}</h1>
-        <p className="sub-slogan">{t('hero.subSlogan')}</p>
+    <section className="relative overflow-visible text-center pt-[180px] pb-[120px] mb-[50px]">
+      <div className="absolute rounded-full z-0 opacity-60 left-[-60px] bottom-[350px] w-[350px] h-[350px] filter blur-[123.134px]" style={{ background: 'radial-gradient(50% 50% at 50% 50%, rgb(69, 201, 193) 39.0625%, rgba(69, 201, 193, 0) 100%)' }} />
+      <div className="container relative z-[1]">
+        <h1 className="text-[48px] font-bold mb-5 text-text">{t('hero.slogan')}</h1>
+        <p className="text-[22px] text-lightText mb-10 max-w-[700px] mx-auto">{t('hero.subSlogan')}</p>
         
-        <div className="hero-buttons">
-          <Link href="#get-started" className="btn btn-primary">
+        <div className="flex gap-5 justify-center mb-[50px]">
+          <Link href="#get-started" className="inline-block px-[30px] py-3 rounded-[30px] font-medium text-[16px] transition-all cursor-pointer bg-primary text-white hover:bg-secondary hover:-translate-y-[3px] hover:shadow-[0_10px_20px_rgba(0,0,0,0.1)]">
             {t('hero.startButton')}
           </Link>
           <Link 
             href="https://github.com/AstrBotDevs/AstrBot" 
-            className="btn btn-secondary github-btn"
+            className="inline-flex items-center gap-2 px-[30px] py-3 rounded-[30px] font-medium text-[16px] transition-all cursor-pointer border-2 border-primary text-primary hover:bg-primary hover:text-white hover:-translate-y-[3px] hover:shadow-[0_10px_20px_rgba(0,0,0,0.1)]"
             target="_blank"
           >
             <i className="fab fa-github"></i> 
             <span>{t('hero.githubButton')}</span>
-            <span className="github-stars">
-              <span className="stars-count">{githubStars}</span>
-            </span>
+            <span className="bg-white/20 rounded-[20px] px-2 py-[2px] text-[14px]"><span className="stars-count">{githubStars}</span></span>
           </Link>
         </div>
 
-        <div className="trendshift-badge">
+        <div className="mb-8">
           <Link href="https://trendshift.io/api/badge/repositories/12875">
             <Image 
               src="https://trendshift.io/api/badge/repositories/12875" 
@@ -75,11 +73,11 @@ export default function Hero() {
           </Link>
         </div>
 
-        <div className="hero-image-container">
+        <div className="mt-6 [perspective:1000px]">
           <Image 
             src={getAssetPath("/assets/webui-1.png")}
             alt="AstrBot WebUI界面" 
-            className="hero-image"
+            className="mx-auto rounded-xl shadow-soft"
             style={{ transform: heroImageTransform }}
             width={800}
             height={500}
@@ -87,6 +85,6 @@ export default function Hero() {
           />
         </div>
       </div>
-    </div>
+    </section>
   )
 }

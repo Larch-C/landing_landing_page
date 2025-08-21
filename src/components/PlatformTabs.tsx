@@ -40,32 +40,32 @@ export default function PlatformTabs() {
   }, [activeTab])
 
   return (
-    <section id="features" className="section">
+    <section id="features" className="py-20">
       <div className="container">
-        <h2 className="section-title">{t('platforms.title')}</h2>
-        <div className="platform-tabs">
-          <div className="tabs-nav">
+        <h2 className="text-3xl font-bold text-text text-center mb-12">{t('platforms.title')}</h2>
+        <div>
+          <div className="relative flex flex-wrap gap-2 justify-center border-b border-border mb-8">
             {platforms.map(platform => (
               <button
                 key={platform.id}
-                className={`tab-button ${activeTab === platform.id ? 'active' : ''}`}
+                className={`px-4 py-2 text-sm md:text-base font-medium relative ${activeTab === platform.id ? 'text-primary' : 'text-text hover:text-primary'}`}
                 data-platform={platform.id}
                 onClick={() => setActiveTab(platform.id)}
               >
                 {platform.name}
               </button>
             ))}
-            <div className="tab-indicator" style={indicatorStyle}></div>
+            <div className="absolute bottom-0 h-0.5 bg-primary transition-all duration-300" style={indicatorStyle as any}></div>
           </div>
           
-          <div className="tabs-content">
+          <div className="mt-6">
             {platforms.map(platform => (
               <div
                 key={platform.id}
-                className={`tab-pane ${activeTab === platform.id ? 'active' : ''}`}
+                className={`${activeTab === platform.id ? 'block' : 'hidden'}`}
                 id={`tab-${platform.id}`}
               >
-                <div className="platform-image">
+                <div className="flex justify-center">
                   {platform.image ? (
                     <Image 
                       src={platform.image} 
@@ -74,7 +74,7 @@ export default function PlatformTabs() {
                       height={400}
                     />
                   ) : (
-                    <span>{platform.content}</span>
+                    <span className="text-lightText">{platform.content}</span>
                   )}
                 </div>
               </div>

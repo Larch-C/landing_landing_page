@@ -37,31 +37,27 @@ export default function ModelProviders() {
   ]
 
   return (
-    <section className="section" style={{ paddingTop: 0 }}>
+    <section className="py-20 pt-0">
       <div className="container">
-        <h2 className="section-title" style={{ marginBottom: '16px' }}>
+        <h2 className="text-3xl font-bold text-text text-center mb-4">
           {t('models.title')}
         </h2>
-        <p style={{ 
-          textAlign: 'center', 
-          marginBottom: '16px', 
-          color: 'var(--light-text-color)' 
-        }}>
+        <p className="text-center mb-4 text-lightText">
           {t('models.subtitle')}
         </p>
         
-        <div className="model-providers-container">
-          <div className="model-providers-grid">
+        <div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
             {providers.map((provider, index) => {
               const ProviderItem = (
-                <div key={index} className="provider-item">
+                <div key={index} className="flex items-center gap-2 px-3 py-2 rounded-lg border border-border bg-white hover:shadow-soft transition">
                   <Image 
                     src={provider.icon} 
                     alt={provider.name}
                     width={32}
                     height={32}
                   />
-                  <span>{provider.name}</span>
+                  <span className="text-sm text-text">{provider.name}</span>
                 </div>
               )
 
@@ -73,7 +69,7 @@ export default function ModelProviders() {
                 ProviderItem
               )
             })}
-            <div className="provider-item">
+            <div className="flex items-center justify-center px-3 py-2 rounded-lg border border-dashed border-border text-lightText">
               <span>...</span>
             </div>
           </div>

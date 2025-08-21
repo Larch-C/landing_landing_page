@@ -10,7 +10,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className="min-h-screen">
       <Header />
-      <main>
+      <main className="pt-[70px]">
         {children}
       </main>
       <Footer />

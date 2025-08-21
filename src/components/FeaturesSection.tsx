@@ -23,14 +23,14 @@ export default function FeaturesSection() {
   ]
 
   return (
-    <section id="use-cases" className="section">
+    <section id="use-cases" className="py-20">
       <div className="container">
-        <h2 className="section-title">{t('features.title')}</h2>
-        <div className="use-cases-grid">
+        <h2 className="text-3xl font-bold text-text text-center mb-12">{t('features.title')}</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => (
-            <div key={index} className="use-case-card">
-              <h3>{feature.title}</h3>
-              <p>{feature.description}</p>
+            <div key={index} className="rounded-xl border border-border p-6 shadow-soft hover:shadow-lg transition">
+              <h3 className="text-lg font-semibold mb-2 text-text">{feature.title}</h3>
+              <p className="text-lightText text-sm leading-relaxed">{feature.description}</p>
             </div>
           ))}
         </div>

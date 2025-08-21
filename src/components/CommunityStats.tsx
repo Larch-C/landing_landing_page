@@ -20,58 +20,54 @@ export default function CommunityStats({ githubData }: CommunityStatsProps) {
   }
 
   return (
-    <section className="section stats-section">
+    <section className="py-20">
       <div className="container">
-        <h2 className="section-title">{t('community.title')}</h2>
-        <p style={{ 
-          textAlign: 'center', 
-          marginBottom: '40px', 
-          color: 'var(--light-text-color)' 
-        }}>
+        <h2 className="text-3xl font-bold text-text text-center mb-4">{t('community.title')}</h2>
+        <p className="text-center mb-10 text-lightText">
           {t('community.subtitle')}
         </p>
         
-        <div className="features-grid stats-grid">
-          <div className="feature-card stats-card">
-            <div className="stats-icon">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div className="p-6 rounded-xl border border-border bg-white text-center shadow-soft">
+            <div className="text-primary text-2xl mb-2">
               <i className="fas fa-star"></i>
             </div>
-            <div className="stats-number">{formatNumber(githubData.stars)}</div>
-            <h3>{t('community.stats.stars')}</h3>
-            <p>{t('community.stats.starsDesc')}</p>
+            <div className="text-3xl font-bold text-text">{formatNumber(githubData.stars)}</div>
+            <h3 className="font-semibold mt-1">{t('community.stats.stars')}</h3>
+            <p className="text-sm text-lightText">{t('community.stats.starsDesc')}</p>
           </div>
           
-          <div className="feature-card stats-card">
-            <div className="stats-icon">
+          <div className="p-6 rounded-xl border border-border bg-white text-center shadow-soft">
+            <div className="text-primary text-2xl mb-2">
               <i className="fas fa-code-branch"></i>
             </div>
-            <div className="stats-number">{formatNumber(githubData.forks)}</div>
-            <h3>{t('community.stats.forks')}</h3>
-            <p>{t('community.stats.forksDesc')}</p>
+            <div className="text-3xl font-bold text-text">{formatNumber(githubData.forks)}</div>
+            <h3 className="font-semibold mt-1">{t('community.stats.forks')}</h3>
+            <p className="text-sm text-lightText">{t('community.stats.forksDesc')}</p>
           </div>
           
-          <div className="feature-card stats-card">
-            <div className="stats-icon">
+          <div className="p-6 rounded-xl border border-border bg-white text-center shadow-soft">
+            <div className="text-primary text-2xl mb-2">
               <i className="fas fa-users"></i>
             </div>
-            <div className="stats-number">{formatNumber(githubData.contributors)}</div>
-            <h3>{t('community.stats.contributors')}</h3>
-            <p>{t('community.stats.contributorsDesc')}</p>
+            <div className="text-3xl font-bold text-text">{formatNumber(githubData.contributors)}</div>
+            <h3 className="font-semibold mt-1">{t('community.stats.contributors')}</h3>
+            <p className="text-sm text-lightText">{t('community.stats.contributorsDesc')}</p>
           </div>
           
-          <div className="feature-card stats-card">
-            <div className="stats-icon">
+          <div className="p-6 rounded-xl border border-border bg-white text-center shadow-soft">
+            <div className="text-primary text-2xl mb-2">
               <i className="fas fa-puzzle-piece"></i>
             </div>
-            <div className="stats-number">50+</div>
-            <h3>{t('community.stats.plugins')}</h3>
-            <p>{t('community.stats.pluginsDesc')}</p>
+            <div className="text-3xl font-bold text-text">50+</div>
+            <h3 className="font-semibold mt-1">{t('community.stats.plugins')}</h3>
+            <p className="text-sm text-lightText">{t('community.stats.pluginsDesc')}</p>
           </div>
         </div>
         
-        <div className="contributors-showcase">
-          <h3>{t('community.contributorsTitle')}</h3>
-          <div className="contributors-image">
+        <div className="mt-8">
+          <h3 className="text-xl font-semibold text-center mb-4">{t('community.contributorsTitle')}</h3>
+          <div className="flex justify-center">
             <Image 
               src="https://contrib.rocks/image?repo=AstrBotDevs/AstrBot" 
               alt="AstrBot贡献者"
@@ -79,7 +75,7 @@ export default function CommunityStats({ githubData }: CommunityStatsProps) {
               height={200}
             />
           </div>
-          <p className="contributors-note">{t('community.contributorsNote')}</p>
+          <p className="text-sm text-lightText text-center mt-2">{t('community.contributorsNote')}</p>
         </div>
       </div>
     </section>
