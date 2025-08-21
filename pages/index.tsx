@@ -23,7 +23,7 @@ export default function Home({ githubData, pluginsData }: HomeProps) {
   const { t, isLoaded } = useI18n()
 
   if (!isLoaded) {
-    return <div>Loading...</div>
+    return <div>{t('common.loading')}</div>
   }
 
   return (
@@ -42,7 +42,6 @@ export default function Home({ githubData, pluginsData }: HomeProps) {
       <ModelProviders />
       <PluginsSection pluginsData={pluginsData} />
       <CommunityStats githubData={githubData} />
-      <FeaturesSection />
       <GetStartedSection />
     </Layout>
   )

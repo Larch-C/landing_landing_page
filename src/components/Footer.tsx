@@ -5,20 +5,20 @@ export default function Footer() {
   const { t } = useI18n()
 
   return (
-    <footer>
+    <footer className="bg-[var(--light-background)] py-16 pb-8 text-[#e9eef9]">
       <div className="container">
-        <div className="footer-content">
+        <div className="footer-content flex justify-between mb-10 flex-col md:flex-row gap-8">
           <div className="footer-logo">
-            <h2>AstrBot</h2>
-            <p>{t('footer.slogan')}</p>
+            <h2 className="text-2xl mb-2 text-[#6f92cb]">AstrBot</h2>
+            <p className="text-[var(--light-text-color)]">{t('footer.slogan')}</p>
           </div>
           
-          <div className="footer-links">
+          <div className="footer-links flex gap-14 flex-col md:flex-row">
             <div className="footer-links-column">
-              <h3>{t('footer.resources.title')}</h3>
+              <h3 className="text-lg mb-5 text-[#f4f8ff]">{t('footer.resources.title')}</h3>
               <ul>
-                <li>
-                  <Link href="https://docs.astrbot.app">
+                <li className="mb-2">
+                  <Link className="text-[var(--light-text-color)] hover:text-[#cfe0ff]" href="https://docs.astrbot.app">
                     {t('footer.resources.docs')}
                   </Link>
                 </li>
@@ -26,20 +26,20 @@ export default function Footer() {
             </div>
             
             <div className="footer-links-column">
-              <h3>{t('footer.community.title')}</h3>
+              <h3 className="text-lg mb-5 text-[#f4f8ff]">{t('footer.community.title')}</h3>
               <ul>
-                <li>
-                  <Link href="https://github.com/AstrBotDevs/AstrBot">
+                <li className="mb-2">
+                  <Link className="text-[var(--light-text-color)] hover:text-[#cfe0ff]" href="https://github.com/AstrBotDevs/AstrBot">
                     {t('footer.community.github')}
                   </Link>
                 </li>
-                <li>
-                  <Link href="https://qm.qq.com/cgi-bin/qm/qr?k=wtbaNx7EioxeaqS9z7RQWVXPIxg2zYr7&jump_from=webapi&authKey=vlqnv/AV2DbJEvGIcxdlNSpfxVy+8vVqijgreRdnVKOaydpc+YSw4MctmEbr0k5">
+                <li className="mb-2">
+                  <Link className="text-[var(--light-text-color)] hover:text-[#cfe0ff]" href="https://qm.qq.com/cgi-bin/qm/qr?k=wtbaNx7EioxeaqS9z7RQWVXPIxg2zYr7&jump_from=webapi&authKey=vlqnv/AV2DbJEvGIcxdlNSpfxVy+8vVqijgreRdnVKOaydpc+YSw4MctmEbr0k5">
                     {t('footer.community.qq')}
                   </Link>
                 </li>
-                <li>
-                  <Link href="https://t.me/+hAsD2Ebl5as3NmY1">
+                <li className="mb-2">
+                  <Link className="text-[var(--light-text-color)] hover:text-[#cfe0ff]" href="https://t.me/+hAsD2Ebl5as3NmY1">
                     {t('footer.community.telegram')}
                   </Link>
                 </li>
@@ -47,15 +47,15 @@ export default function Footer() {
             </div>
             
             <div className="footer-links-column">
-              <h3>{t('footer.support.title')}</h3>
+              <h3 className="text-lg mb-5 text-[#f4f8ff]">{t('footer.support.title')}</h3>
               <ul>
-                <li>
-                  <Link href="mailto:soulter@qq.com">
+                <li className="mb-2">
+                  <Link className="text-[var(--light-text-color)] hover:text-[#cfe0ff]" href="mailto:soulter@qq.com">
                     {t('footer.support.contact')}
                   </Link>
                 </li>
-                <li>
-                  <Link href="https://github.com/AstrBotDevs/AstrBot/issues">
+                <li className="mb-2">
+                  <Link className="text-[var(--light-text-color)] hover:text-[#cfe0ff]" href="https://github.com/AstrBotDevs/AstrBot/issues">
                     {t('footer.support.issues')}
                   </Link>
                 </li>
@@ -64,27 +64,27 @@ export default function Footer() {
           </div>
         </div>
         
-        <div className="copyright">
+        <div className="copyright text-center pt-8 border-t border-[var(--border-color)] text-[var(--light-text-color)]">
           <p dangerouslySetInnerHTML={{ __html: t('footer.copyright') }} />
-          <p style={{ marginTop: '8px' }}>
-            合作伙伴: <Link 
+          <p className="mt-2">
+            {t('footer.partnersLabel')}: <Link 
               href="https://www.rainyun.com/NjY3OTQ1_" 
               target="_blank"
-              style={{ textDecoration: 'underline' }}
+              className="underline"
             >
               雨云-新一代云服务商
             </Link>
           </p>
-          <p style={{ marginTop: '8px' }}>
-            友情链接: <Link 
+          <p className="mt-2">
+            {t('footer.friendLinksLabel')}: <Link 
               href="https://ustb-806.github.io/" 
               target="_blank"
-              style={{ textDecoration: 'underline' }}
+              className="underline"
             >
               北京科技大学 806 学生创新实验室
             </Link>
           </p>
-          <p style={{ marginTop: '8px' }}>{t('footer.love')}</p>
+          <p className="mt-2">{t('footer.love')}</p>
         </div>
       </div>
     </footer>

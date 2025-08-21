@@ -1,51 +1,37 @@
+@import "tailwindcss";
+@source "../../pages/**/*.{js,ts,jsx,tsx}";
+@source "../components/**/*.{js,ts,jsx,tsx}";
+@source "../lib/**/*.{js,ts,jsx,tsx}";
+
 :root {
     --primary-color: #314473;
     --secondary-color: #51bcdd;
     --accent-color: #FF6B6B;
-    --text-color: #080A44;
-    --light-text-color: #393C6B;
-    --background-color: #FFFFFF;
-    --light-background: #F8F9FA;
-    --border-color: #EEEEEE;
-    --shadow-color: rgba(0, 0, 0, 0.1);
+    --text-color: #e9eef9;
+    --light-text-color: #cfe0ff;
+    --background-color: #0f1a2a;
+    --light-background: #132238;
+    --border-color: rgba(255,255,255,0.08);
+    --shadow-color: rgba(0, 0, 0, 0.25);
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Global base tweaks layered on top of Tailwind */
 body {
-    font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    line-height: 1.6;
+    @apply antialiased bg-[var(--background-color)];
     color: var(--text-color);
-    background-color: var(--background-color);
 }
 
-a {
-    text-decoration: none;
-    color: var(--primary-color);
-    transition: all 0.3s ease;
-}
+a { @apply transition-colors duration-300; color: #314473; }
+a:hover { color: #6f92cb; }
 
-a:hover {
-    color: var(--secondary-color);
-}
+ul { list-style: none; }
 
-ul {
-    list-style: none;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
 /* Navigation */
 .navbar {
-    background-color: var(--background-color);
+    background-color: rgba(11, 18, 32, 0.6);
+    backdrop-filter: saturate(140%) blur(10px);
     position: fixed;
     width: 100%;
     top: 0;
@@ -69,6 +55,17 @@ ul {
     color: var(--primary-color);
     display: flex;
     align-items: center;
+    position: relative;
+}
+
+.logo::before {
+    content: "";
+    position: absolute;
+    inset: -6px -10px -6px -10px;
+    background: radial-gradient(60% 70% at 50% 50%, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.08) 35%, transparent 80%);
+    filter: blur(8px);
+    z-index: 0;
+    pointer-events: none;
 }
 
 .nav-links {
@@ -133,7 +130,7 @@ ul {
     font-size: 48px;
     font-weight: 700;
     margin-bottom: 20px;
-    color: var(--text-color);
+    color: #e6eefc;
 }
 
 .sub-slogan {
@@ -236,12 +233,7 @@ ul {
 }
 
 /* Sections */
-.section {
-    padding: 80px 0;
-    position: relative;
-    background-color: rgba(255, 255, 255, 0.85);
-    z-index: 2;
-}
+.section { padding: 80px 0; position: relative; background-color: rgba(19, 34, 56, 0.45); z-index: 2; }
 
 .section#features {
     border-top-left-radius: 30px;
@@ -416,9 +408,7 @@ footer {
 }
 
 /* Platform Tabs */
-.platform-tabs {
-    margin: 0 auto;
-}
+.platform-tabs { margin: 0 auto; }
 
 .tabs-nav {
     display: flex;
@@ -682,9 +672,7 @@ footer {
 }
 
 /* 社区数据统计 */
-.stats-section {
-    background-color: var(--background-color);
-}
+.stats-section { background-color: rgba(19, 34, 56, 0.65); }
 
 .stats-grid {
     max-width: 1200px;
@@ -1048,4 +1036,60 @@ html[dir="rtl"] .language-dropdown {
 
 html[lang="ja-JP"] {
     font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Starfield layers for parallax background */
+.starfield {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: -10;
+    background: linear-gradient(to bottom, #2e4f83 0%, #24446f 60%, #1a2f54 100%);
+}
+
+.stars, .stars2, .stars3 {
+    position: absolute;
+    inset: -50% -50% -50% -50%;
+    background-repeat: repeat;
+    background-size: 220px 220px;
+    pointer-events: none;
+    will-change: opacity, transform;
+}
+
+/* Generate star dots via radial-gradients */
+.stars {
+    background-image:
+      radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.95) 55%, transparent 60%),
+      radial-gradient(1.5px 1.5px at 100px 150px, rgba(255,255,255,0.9) 55%, transparent 60%),
+      radial-gradient(1.5px 1.5px at 180px 60px, rgba(255,255,255,0.9) 55%, transparent 60%),
+      radial-gradient(1px 1px at 60px 190px, rgba(255,255,255,0.9) 55%, transparent 60%),
+      radial-gradient(1px 1px at 140px 20px, rgba(255,255,255,0.85) 55%, transparent 60%),
+      radial-gradient(2px 2px at 200px 120px, rgba(255,255,255,0.95) 55%, transparent 60%);
+    animation: twinkle 3s ease-in-out infinite;
+    animation-delay: 0s;
+}
+.stars2 {
+    background-image:
+      radial-gradient(1.5px 1.5px at 50px 80px, rgba(255,255,255,0.9) 55%, transparent 60%),
+      radial-gradient(1px 1px at 120px 40px, rgba(255,255,255,0.8) 55%, transparent 60%),
+      radial-gradient(1px 1px at 200px 100px, rgba(255,255,255,0.8) 55%, transparent 60%),
+      radial-gradient(1.5px 1.5px at 30px 160px, rgba(255,255,255,0.85) 55%, transparent 60%),
+      radial-gradient(1px 1px at 170px 180px, rgba(255,255,255,0.85) 55%, transparent 60%);
+    animation: twinkle 4s ease-in-out infinite;
+    animation-delay: .8s;
+}
+.stars3 {
+    background-image:
+      radial-gradient(1px 1px at 70px 50px, rgba(255,255,255,0.95) 55%, transparent 60%),
+      radial-gradient(1px 1px at 140px 120px, rgba(255,255,255,0.85) 55%, transparent 60%),
+      radial-gradient(1.5px 1.5px at 10px 180px, rgba(255,255,255,0.9) 55%, transparent 60%),
+      radial-gradient(1px 1px at 190px 170px, rgba(255,255,255,0.8) 55%, transparent 60%),
+      radial-gradient(1px 1px at 30px 20px, rgba(255,255,255,0.85) 55%, transparent 60%);
+    animation: twinkle 5s ease-in-out infinite;
+    animation-delay: 1.4s;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 0.4; }
 }

@@ -41,30 +41,30 @@ export default function Hero() {
   }, [])
 
   return (
-    <div className="hero">
+    <div className="hero relative pt-[180px] pb-[120px] text-center overflow-visible mb-[50px]">
       <div className="hero-bg-circle"></div>
-      <div className="container">
-        <h1 className="slogan">{t('hero.slogan')}</h1>
-        <p className="sub-slogan">{t('hero.subSlogan')}</p>
-        
-        <div className="hero-buttons">
-          <Link href="#get-started" className="btn btn-primary">
+      <div className="container relative z-[1]">
+        <h1 className="slogan text-4xl md:text-6xl font-extrabold leading-tight mb-4 text-[#f4f8ff] drop-shadow-lg">{t('hero.slogan')}</h1>
+        <p className="sub-slogan text-lg md:text-2xl mb-6 text-[#e6f0ff] drop-shadow">{t('hero.subSlogan')}</p>
+
+        <div className="hero-buttons flex gap-4 justify-center mb-[50px]">
+          <Link href="#get-started" className="btn btn-primary px-6 py-3 rounded-md bg-sky-600 hover:bg-sky-500 shadow inline-block">
             {t('hero.startButton')}
           </Link>
           <Link 
             href="https://github.com/AstrBotDevs/AstrBot" 
-            className="btn btn-secondary github-btn"
+            className="btn btn-secondary github-btn px-4 py-3 rounded-md bg-transparent border border-sky-400 hover:bg-sky-800/40 inline-flex items-center gap-2"
             target="_blank"
           >
             <i className="fab fa-github"></i> 
             <span>{t('hero.githubButton')}</span>
-            <span className="github-stars">
+            <span className="github-stars ml-2 text-sm opacity-70">
               <span className="stars-count">{githubStars}</span>
             </span>
           </Link>
         </div>
 
-        <div className="trendshift-badge">
+        <div className="trendshift-badge my-5 text-center flex items-center justify-center">
           <Link href="https://trendshift.io/api/badge/repositories/12875">
             <Image 
               src="https://trendshift.io/api/badge/repositories/12875" 
@@ -75,11 +75,11 @@ export default function Hero() {
           </Link>
         </div>
 
-        <div className="hero-image-container">
+        <div className="hero-image-container pt-8 relative max-w-[900px] mx-auto overflow-hidden rounded-xl [perspective:1000px] bg-black/10">
           <Image 
             src={getAssetPath("/assets/webui-1.png")}
             alt="AstrBot WebUI界面" 
-            className="hero-image"
+            className="hero-image w-full rounded-xl shadow-xl [mask-image:linear-gradient(to_bottom,_black_65%,_transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,_black_65%,_transparent_100%)] will-change-transform"
             style={{ transform: heroImageTransform }}
             width={800}
             height={500}

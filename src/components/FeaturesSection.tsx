@@ -25,12 +25,12 @@ export default function FeaturesSection() {
   return (
     <section id="use-cases" className="section">
       <div className="container">
-        <h2 className="section-title">{t('features.title')}</h2>
-        <div className="use-cases-grid">
+        <h2 className="section-title text-center mb-10 text-3xl font-bold text-[#e6eefc]">{t('features.title')}</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-[1200px] mx-auto">
           {features.map((feature, index) => (
-            <div key={index} className="use-case-card">
-              <h3>{feature.title}</h3>
-              <p>{feature.description}</p>
+            <div key={index} className="rounded-lg p-6 shadow-soft hover:-translate-y-1 transition bg-white/10">
+              <h3 className="mb-3 text-[#f4f8ff] font-semibold drop-shadow">{feature.title}</h3>
+              <p className="text-[#cfe0ff]">{feature.description}</p>
             </div>
           ))}
         </div>
