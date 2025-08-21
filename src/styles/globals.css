@@ -1,6 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@source "../../pages/**/*.{js,ts,jsx,tsx}";
+@source "../components/**/*.{js,ts,jsx,tsx}";
+@source "../lib/**/*.{js,ts,jsx,tsx}";
 
 :root {
     --primary-color: #314473;
@@ -16,10 +17,13 @@
 
 /* Global base tweaks layered on top of Tailwind */
 body {
-    @apply antialiased text-[var(--text-color)] bg-[var(--background-color)];
+    @apply antialiased bg-[var(--background-color)];
+    color: var(--text-color);
 }
 
-a { @apply transition-colors duration-300 text-steel-700 hover:text-steel-500; }
+a { @apply transition-colors duration-300; color: #314473; }
+a:hover { color: #6f92cb; }
+
 ul { list-style: none; }
 
 .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
