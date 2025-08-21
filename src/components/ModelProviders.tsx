@@ -2,9 +2,11 @@ import { useI18n } from '../lib/i18n'
 import { getAssetPath } from '../lib/config'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useScrollReveal } from '../lib/useScrollReveal'
 
 export default function ModelProviders() {
   const { t } = useI18n()
+  const { elementRef, isVisible } = useScrollReveal()
 
   const providers = [
     { name: 'OpenAI', icon: 'https://registry.npmmirror.com/@lobehub/icons-static-svg/latest/files/icons/openai.svg' },
@@ -37,9 +39,9 @@ export default function ModelProviders() {
   ]
 
   return (
-    <section className="section" style={{ paddingTop: 0 }}>
+    <section className="section" style={{ paddingTop: 0 }} ref={elementRef as any}>
       <div className="container">
-        <h2 className="section-title" style={{ marginBottom: '16px' }}>
+        <h2 className={`section-title ${isVisible ? 'reveal-in' : 'reveal'}`} style={{ marginBottom: '16px' }}>
           {t('models.title')}
         </h2>
         <p style={{ 
@@ -54,7 +56,7 @@ export default function ModelProviders() {
           <div className="model-providers-grid">
             {providers.map((provider, index) => {
               const ProviderItem = (
-                <div key={index} className="provider-item">
+                <div key={index} className={`provider-item ${isVisible ? 'reveal-in' : 'reveal'}`} style={{ transitionDelay: `${index * 60}ms` }}>
                   <Image 
                     src={provider.icon} 
                     alt={provider.name}

@@ -3,6 +3,7 @@ import { useI18n } from '../lib/i18n'
 import { getAssetPath } from '../lib/config'
 import Image from 'next/image'
 import Link from 'next/link'
+import ParallaxBackground from './ParallaxBackground'
 
 export default function Hero() {
   const { t } = useI18n()
@@ -43,6 +44,9 @@ export default function Hero() {
   return (
     <div className="hero">
       <div className="hero-bg-circle"></div>
+      <ParallaxBackground speed={-0.1}>
+        <div className="hero-bg-gradient"></div>
+      </ParallaxBackground>
       <div className="container">
         <h1 className="slogan">{t('hero.slogan')}</h1>
         <p className="sub-slogan">{t('hero.subSlogan')}</p>

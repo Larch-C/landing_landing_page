@@ -1,4 +1,5 @@
 import { useI18n } from '../lib/i18n'
+import { useScrollReveal } from '../lib/useScrollReveal'
 
 interface Plugin {
   desc: string
@@ -13,13 +14,14 @@ interface PluginsSectionProps {
 
 export default function PluginsSection({ pluginsData }: PluginsSectionProps) {
   const { t } = useI18n()
+  const { elementRef, isVisible } = useScrollReveal()
 
   const pluginsList = Object.entries(pluginsData).slice(0, 50)
 
   return (
-    <section className="section plugins-section">
+    <section className="section plugins-section" ref={elementRef as any}>
       <div className="container">
-        <h2 className="section-title">{t('plugins.title')}</h2>
+        <h2 className={`section-title ${isVisible ? 'reveal-in' : 'reveal'}`}>{t('plugins.title')}</h2>
         <p style={{ 
           textAlign: 'center', 
           marginBottom: '48px', 
@@ -36,7 +38,7 @@ export default function PluginsSection({ pluginsData }: PluginsSectionProps) {
             const tags = data.tags || []
             
             return (
-              <div key={name} className="plugin-item">
+              <div key={name} className={`plugin-item ${isVisible ? 'reveal-in' : 'reveal'}`} style={{ transitionDelay: `${Math.random() * 300}ms` }}>
                 <div>
                   <div className="plugin-header">
                     <div className="plugin-name">{displayName}</div>

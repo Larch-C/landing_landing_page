@@ -2,9 +2,11 @@ import { useState, useEffect } from 'react'
 import { useI18n } from '../lib/i18n'
 import { getAssetPath } from '../lib/config'
 import Image from 'next/image'
+import { useScrollReveal } from '../lib/useScrollReveal'
 
 export default function PlatformTabs() {
   const { t } = useI18n()
+  const { elementRef, isVisible } = useScrollReveal()
   const [activeTab, setActiveTab] = useState('qq')
   const [indicatorStyle, setIndicatorStyle] = useState({})
 
@@ -40,9 +42,9 @@ export default function PlatformTabs() {
   }, [activeTab])
 
   return (
-    <section id="features" className="section">
+    <section id="features" className="section" ref={elementRef as any}>
       <div className="container">
-        <h2 className="section-title">{t('platforms.title')}</h2>
+        <h2 className={`section-title ${isVisible ? 'reveal-in' : 'reveal'}`}>{t('platforms.title')}</h2>
         <div className="platform-tabs">
           <div className="tabs-nav">
             {platforms.map(platform => (
@@ -62,7 +64,7 @@ export default function PlatformTabs() {
             {platforms.map(platform => (
               <div
                 key={platform.id}
-                className={`tab-pane ${activeTab === platform.id ? 'active' : ''}`}
+                className={`tab-pane ${activeTab === platform.id ? 'active' : ''} ${isVisible ? 'reveal-in' : 'reveal'}`}
                 id={`tab-${platform.id}`}
               >
                 <div className="platform-image">

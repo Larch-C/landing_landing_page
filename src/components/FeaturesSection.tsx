@@ -1,7 +1,9 @@
 import { useI18n } from '../lib/i18n'
+import { useScrollReveal } from '../lib/useScrollReveal'
 
 export default function FeaturesSection() {
   const { t } = useI18n()
+  const { elementRef, isVisible } = useScrollReveal()
 
   const features = [
     {
@@ -23,12 +25,12 @@ export default function FeaturesSection() {
   ]
 
   return (
-    <section id="use-cases" className="section">
+    <section id="use-cases" className="section" ref={elementRef as any}>
       <div className="container">
-        <h2 className="section-title">{t('features.title')}</h2>
+        <h2 className={`section-title ${isVisible ? 'reveal-in' : 'reveal'}`}>{t('features.title')}</h2>
         <div className="use-cases-grid">
           {features.map((feature, index) => (
-            <div key={index} className="use-case-card">
+            <div key={index} className={`use-case-card ${isVisible ? 'reveal-in' : 'reveal'}`} style={{ transitionDelay: `${index * 80}ms` }}>
               <h3>{feature.title}</h3>
               <p>{feature.description}</p>
             </div>
