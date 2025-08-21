@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useI18n, supportedLocales } from '../lib/i18n'
+import { getAssetPath } from '../lib/config'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -60,7 +61,7 @@ export default function Header() {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="container">
         <div className="logo">
-          <Image src="/assets/logo.svg" alt="AstrBot" width={150} height={40} />
+          <Image src={getAssetPath("/assets/logo.svg")} alt="AstrBot" width={150} height={40} />
         </div>
         
         <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>

@@ -1,4 +1,5 @@
 import { useI18n } from '../lib/i18n'
+import { getAssetPath } from '../lib/config'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -20,7 +21,7 @@ export default function ModelProviders() {
     { name: 'Azure', icon: 'https://registry.npmmirror.com/@lobehub/icons-static-svg/latest/files/icons/azure.svg' },
     { 
       name: '优云智算', 
-      icon: '/assets/ucloud_compshare.png',
+      icon: getAssetPath('/assets/ucloud_compshare.png'),
       link: 'https://www.compshare.cn/?ytag=GPU_YY-gh_astrbot&referral_code=FV7DcGowN4hB5UuXKgpE74'
     },
     { 

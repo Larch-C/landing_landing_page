@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useI18n } from '../lib/i18n'
+import { getAssetPath } from '../lib/config'
 import Image from 'next/image'
 
 export default function PlatformTabs() {
@@ -8,16 +9,16 @@ export default function PlatformTabs() {
   const [indicatorStyle, setIndicatorStyle] = useState({})
 
   const platforms = [
-    { id: 'qq', name: t('platforms.qq'), image: '/assets/qq_demo_1.png' },
-    { id: 'wxkefu', name: t('platforms.wxkefu'), image: '/assets/wxkefu_demo_1.png' },
-    { id: 'wecom', name: t('platforms.wecom'), image: '/assets/wecom_demo_1.png' },
-    { id: 'wxoa', name: t('platforms.wxoa'), image: '/assets/wxoa_demo_1.png' },
-    { id: 'lark', name: t('platforms.lark'), image: '/assets/lark_demo_1.png' },
-    { id: 'dingtalk', name: t('platforms.dingtalk'), image: '/assets/dingtalk_demo_1.png' },
-    { id: 'telegram', name: t('platforms.telegram'), image: '/assets/telegram_demo_1.png' },
-    { id: 'slack', name: t('platforms.slack'), image: '/assets/slack_demo_1.png' },
-    { id: 'discord', name: t('platforms.discord'), image: '/assets/discord_demo_1.png' },
-    { id: 'kook', name: t('platforms.kook'), image: '/assets/kook_demo_1.png' },
+    { id: 'qq', name: t('platforms.qq'), image: getAssetPath('/assets/qq_demo_1.png') },
+    { id: 'wxkefu', name: t('platforms.wxkefu'), image: getAssetPath('/assets/wxkefu_demo_1.png') },
+    { id: 'wecom', name: t('platforms.wecom'), image: getAssetPath('/assets/wecom_demo_1.png') },
+    { id: 'wxoa', name: t('platforms.wxoa'), image: getAssetPath('/assets/wxoa_demo_1.png') },
+    { id: 'lark', name: t('platforms.lark'), image: getAssetPath('/assets/lark_demo_1.png') },
+    { id: 'dingtalk', name: t('platforms.dingtalk'), image: getAssetPath('/assets/dingtalk_demo_1.png') },
+    { id: 'telegram', name: t('platforms.telegram'), image: getAssetPath('/assets/telegram_demo_1.png') },
+    { id: 'slack', name: t('platforms.slack'), image: getAssetPath('/assets/slack_demo_1.png') },
+    { id: 'discord', name: t('platforms.discord'), image: getAssetPath('/assets/discord_demo_1.png') },
+    { id: 'kook', name: t('platforms.kook'), image: getAssetPath('/assets/kook_demo_1.png') },
     { id: 'vocechat', name: t('platforms.vocechat'), content: 'AstrBot 支持接入 VoceChat。' }
   ]
 

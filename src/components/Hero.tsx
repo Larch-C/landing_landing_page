@@ -77,7 +77,7 @@ export default function Hero() {
 
         <div className="hero-image-container">
           <Image 
-            src="/assets/webui-1.png" 
+            src={getAssetPath("/assets/webui-1.png")}
             alt="AstrBot WebUI界面" 
             className="hero-image"
             style={{ transform: heroImageTransform }}
