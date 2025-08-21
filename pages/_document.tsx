@@ -12,7 +12,9 @@ export default function Document() {
             window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
           `}
         </script>
-        <script defer src="/_vercel/speed-insights/script.js" />
+        {process.env.NEXT_PUBLIC_ENABLE_SPEED_INSIGHTS === '1' ? (
+          <script defer src="/_vercel/speed-insights/script.js" />
+        ) : null}
       </body>
     </Html>
   )

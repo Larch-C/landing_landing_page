@@ -1,12 +1,12 @@
 // Configuration for different deployment environments
-const isProd = process.env.NODE_ENV === 'production'
-const repoName = 'landing_landing_page'
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
 
 export const config = {
-  basePath: isProd ? `/${repoName}` : '',
-  assetPrefix: isProd ? `/${repoName}` : '',
+  basePath,
+  assetPrefix: basePath,
 }
 
 export function getAssetPath(path: string): string {
+  if (!path.startsWith('/')) return `${config.basePath}/${path}`
   return `${config.basePath}${path}`
 }

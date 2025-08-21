@@ -107,7 +107,8 @@ document.addEventListener('DOMContentLoaded', function () {
         // 加载翻译文件
         loadTranslations: function(locale) {
             return new Promise((resolve, reject) => {
-                fetch(`/assets/i18n/${locale}.json`)
+                // Respect basePath when hosted under subpath (e.g., GitHub Pages)
+                fetch(((window.__BASE_PATH__ || '') + `/assets/i18n/${locale}.json`).replace(/\/+/, '/'))
                     .then(response => {
                         if (!response.ok) {
                             throw new Error(`HTTP error! status: ${response.status}`);

@@ -36,6 +36,11 @@ export default function Home({ githubData, pluginsData }: HomeProps) {
         <meta property="og:description" content={t('hero.subSlogan')} />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.__BASE_PATH__ = ${JSON.stringify(process.env.NEXT_PUBLIC_BASE_PATH || '')};`
+          }}
+        />
       </Head>
 
       <Hero />
