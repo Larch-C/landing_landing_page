@@ -61,7 +61,17 @@ export default function Header() {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''} bg-sky-900/70 backdrop-blur-md border-b border-sky-800`}>
       <div className="container flex items-center justify-between h-[70px]">
         <div className="logo flex items-center">
-          <Image className="drop-shadow-[0_0_10px_rgba(255,255,255,0.28)] brightness-110" src={getAssetPath("/assets/logo.svg")} alt="AstrBot" width={150} height={40} />
+          <Image
+            className="brightness-110 rounded-md"
+            src={getAssetPath("/assets/logo.svg")}
+            alt="AstrBot"
+            width={150}
+            height={40}
+            style={{
+              boxShadow:
+                '0 0 10px rgba(255,255,255,0.30), 0 0 22px rgba(170,210,255,0.22), 0 8px 24px rgba(0,0,0,0.35)'
+            }}
+          />
         </div>
         
         <ul className={`nav-links ${isMenuOpen ? 'active' : ''} hidden md:flex gap-8 items-center`}>
