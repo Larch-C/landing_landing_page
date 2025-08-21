@@ -31,9 +31,14 @@ export default function ParallaxBackground() {
       ticking = true
     }
 
+    // Kick initial transforms after mount and when resizing (ensures visibility)
     handleScroll()
     window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
+    window.addEventListener('resize', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', handleScroll)
+    }
   }, [])
 
   return (

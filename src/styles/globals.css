@@ -233,7 +233,7 @@ ul { list-style: none; }
 }
 
 /* Sections */
-.section { padding: 80px 0; position: relative; background-color: rgba(19, 34, 56, 0.28); z-index: 1; }
+.section { padding: 80px 0; position: relative; background-color: transparent; z-index: 1; border-radius: 24px; overflow: hidden; border: 1px solid var(--border-color); }
 
 .section#features {
     border-top-left-radius: 30px;
@@ -673,7 +673,7 @@ footer {
 }
 
 /* 社区数据统计 */
-.stats-section { background-color: rgba(19, 34, 56, 0.5); }
+.stats-section { background-color: transparent; }
 
 .stats-grid {
     max-width: 1200px;
@@ -1102,10 +1102,10 @@ html[lang="ja-JP"] {
     inset: -20% -20% -20% -20%;
     pointer-events: none;
     background:
-      radial-gradient(600px 600px at 10% 20%, rgba(111,146,203,0.35), transparent 60%),
-      radial-gradient(500px 500px at 85% 15%, rgba(81,188,221,0.25), transparent 65%),
-      radial-gradient(420px 420px at 70% 80%, rgba(72,115,186,0.28), transparent 65%),
-      radial-gradient(360px 360px at 20% 75%, rgba(111,146,203,0.22), transparent 70%);
+      radial-gradient(800px 800px at 10% 20%, rgba(111,146,203,0.45), transparent 60%),
+      radial-gradient(600px 600px at 85% 15%, rgba(81,188,221,0.35), transparent 65%),
+      radial-gradient(520px 520px at 70% 80%, rgba(72,115,186,0.4), transparent 65%),
+      radial-gradient(460px 460px at 20% 75%, rgba(111,146,203,0.32), transparent 70%);
     filter: blur(10px) saturate(120%);
 }
 
@@ -1121,9 +1121,9 @@ html[lang="ja-JP"] {
       radial-gradient(1.8px 1.8px at 200px 160px, rgba(255,255,255,0.85) 55%, transparent 60%),
       radial-gradient(1.4px 1.4px at 60px 190px, rgba(255,255,255,0.8) 55%, transparent 60%),
       radial-gradient(1.2px 1.2px at 180px 40px, rgba(255,255,255,0.75) 55%, transparent 60%);
-    background-size: 220px 220px;
-    animation: snowfall 20s linear infinite;
-    opacity: 0.6;
+    background-size: 180px 180px;
+    animation: snowfall 18s linear infinite;
+    opacity: 0.85;
 }
 
 @keyframes snowfall {
