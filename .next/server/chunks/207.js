@@ -1,0 +1,3 @@
+"use strict";exports.id=207,exports.ids=[207],exports.modules={1207:(s,i,e)=>{e.r(i),e.d(i,{default:()=>Document});var r=e(997),t=e(6859);function Document(){return(0,r.jsxs)(t.Html,{children:[r.jsx(t.Head,{}),(0,r.jsxs)("body",{children:[r.jsx(t.Main,{}),r.jsx(t.NextScript,{}),r.jsx("script",{children:`
+            window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+          `}),r.jsx("script",{defer:!0,src:"/_vercel/speed-insights/script.js"})]})]})}}};
