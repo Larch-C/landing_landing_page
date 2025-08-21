@@ -4,9 +4,9 @@ const isVercel = Boolean(process.env.VERCEL)
 const repoName = 'landing_landing_page'
 
 export const config = {
-  // Match next.config.js: only add subpath in non-Vercel production (e.g., GitHub Pages)
-  basePath: isProd && !isVercel ? `/${repoName}` : '',
-  assetPrefix: isProd && !isVercel ? `/${repoName}/` : '',
+  // Prefer runtime env injected from next.config.js so client and server match
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH || (isProd && !isVercel ? `/${repoName}` : ''),
+  assetPrefix: (process.env.NEXT_PUBLIC_BASE_PATH ? `${process.env.NEXT_PUBLIC_BASE_PATH}/` : undefined) || (isProd && !isVercel ? `/${repoName}/` : ''),
 }
 
 export function getAssetPath(path: string): string {

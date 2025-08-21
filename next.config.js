@@ -13,6 +13,9 @@ const nextConfig = {
   // On Vercel, serve from root. For non-Vercel production (e.g. GitHub Pages), serve from repo subpath.
   basePath: isProd && !isVercel ? `/${repoName}` : '',
   assetPrefix: isProd && !isVercel ? `/${repoName}/` : undefined,
+  env: {
+    NEXT_PUBLIC_BASE_PATH: isProd && !isVercel ? `/${repoName}` : '',
+  },
   images: {
     unoptimized: true,
     remotePatterns: [
