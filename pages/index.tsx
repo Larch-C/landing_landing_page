@@ -39,12 +39,13 @@ export default function Home({ githubData, pluginsData }: HomeProps) {
       </Head>
 
       <Hero />
+      {/* Scroll overview shows: Platforms -> Community -> Get Started */}
       <ScrollShowcase />
+      {/* Keep details without duplicating overview order */}
       <PlatformTabs />
       <ModelProviders />
       <PluginsSection pluginsData={pluginsData} />
       <CommunityStats githubData={githubData} />
-      <FeaturesSection />
       <GetStartedSection />
     </Layout>
   )

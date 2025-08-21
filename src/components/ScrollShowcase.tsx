@@ -15,11 +15,6 @@ export default function ScrollShowcase() {
       image: getAssetPath('/assets/qq_demo_1.png'),
     },
     {
-      title: t('plugins.title'),
-      desc: t('plugins.subtitle'),
-      image: getAssetPath('/assets/wxkefu_demo_1.png'),
-    },
-    {
       title: t('community.title'),
       desc: t('community.subtitle'),
       image: getAssetPath('/assets/wecom_demo_1.png'),
