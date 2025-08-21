@@ -68,7 +68,7 @@ export default function Footer() {
             合作伙伴: <Link 
               href="https://www.rainyun.com/NjY3OTQ1_" 
               target="_blank"
-              style={{ textDecoration: 'underline' }}
+              className="underline"
             >
               雨云-新一代云服务商
             </Link>
@@ -77,7 +77,7 @@ export default function Footer() {
             友情链接: <Link 
               href="https://ustb-806.github.io/" 
               target="_blank"
-              style={{ textDecoration: 'underline' }}
+              className="underline"
             >
               北京科技大学 806 学生创新实验室
             </Link>
