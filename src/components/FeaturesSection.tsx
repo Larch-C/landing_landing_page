@@ -23,14 +23,36 @@ export default function FeaturesSection() {
   ]
 
   return (
-    <section id="use-cases" className="section">
-      <div className="container">
-        <h2 className="section-title text-center mb-10 text-3xl font-bold text-[#e6eefc]">{t('features.title')}</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-[1200px] mx-auto">
+    <section id="use-cases" className="py-24 relative">
+      <div className="container max-w-6xl">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-primary-100 to-primary-200 bg-clip-text text-transparent mb-4">
+            {t('features.title')}
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-primary-400 mx-auto rounded-full"></div>
+        </div>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
-            <div key={index} className="rounded-lg p-6 shadow-soft hover:-translate-y-1 transition bg-white/10">
-              <h3 className="mb-3 text-[#f4f8ff] font-semibold drop-shadow">{feature.title}</h3>
-              <p className="text-[#cfe0ff]">{feature.description}</p>
+            <div 
+              key={index} 
+              className="group relative bg-gradient-to-br from-neutral-800/50 to-neutral-900/50 backdrop-blur-sm border border-neutral-700/50 rounded-2xl p-8 hover:border-primary-400/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-glow"
+            >
+              {/* Gradient overlay on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+              
+              <div className="relative z-10">
+                <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-6 h-6 bg-white rounded-sm"></div>
+                </div>
+                
+                <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-primary-200 transition-colors duration-300">
+                  {feature.title}
+                </h3>
+                <p className="text-neutral-400 leading-relaxed group-hover:text-neutral-300 transition-colors duration-300">
+                  {feature.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>
