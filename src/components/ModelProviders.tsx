@@ -52,17 +52,18 @@ export default function ModelProviders() {
               {providers.map((provider, index) => {
                 const ProviderItem = (
                   <div key={index} className="provider-item">
-                    <div className="relative p-[1px] rounded-xl bg-gradient-to-b from-sky-400/40 via-cyan-300/20 to-transparent">
-                      <div className="rounded-[11px] bg-white/5 backdrop-blur-sm flex flex-col items-center justify-center py-4 px-2 transition will-change-transform hover:-translate-y-[2px] hover:bg-white/10">
-                        <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-sm">
+                    <div className="relative p-[1px] rounded-xl overflow-hidden bg-gradient-to-b from-sky-400/25 via-cyan-300/15 to-transparent">
+                      <div className="rounded-[11px] bg-black/30 ring-1 ring-white/10 backdrop-blur-sm flex flex-col items-center justify-center py-4 px-2 transition will-change-transform hover:-translate-y-[2px] hover:bg-black/40">
+                        <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-sm overflow-hidden">
                           <Image 
                             src={provider.icon} 
                             alt={provider.name}
                             width={28}
                             height={28}
+                            className="w-7 h-7 object-contain"
                           />
                         </div>
-                        <span className="text-center text-[11px] text-[#dbe9ff] font-medium mt-2">{provider.name}</span>
+                        <span className="text-center text-[11px] text-[#f4f8ff] font-medium mt-2">{provider.name}</span>
                       </div>
                     </div>
                   </div>
@@ -77,7 +78,7 @@ export default function ModelProviders() {
                 )
               })}
               <div className="provider-item">
-                <div className="rounded-xl bg-white/5 backdrop-blur-sm flex items-center justify-center py-4 px-2">
+                <div className="rounded-xl bg-black/30 ring-1 ring-white/10 backdrop-blur-sm flex items-center justify-center py-4 px-2">
                   <span className="text-[#cfe0ff]">...</span>
                 </div>
               </div>
