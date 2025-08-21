@@ -233,7 +233,7 @@ ul { list-style: none; }
 }
 
 /* Sections */
-.section { padding: 80px 0; position: relative; background-color: rgba(19, 34, 56, 0.35); z-index: 2; }
+.section { padding: 80px 0; position: relative; background-color: rgba(19, 34, 56, 0.28); z-index: 1; }
 
 .section#features {
     border-top-left-radius: 30px;
@@ -1045,6 +1045,7 @@ html[lang="ja-JP"] {
     overflow: hidden;
     z-index: 0;
     background: linear-gradient(to bottom, #2e4f83 0%, #24446f 60%, #1a2f54 100%);
+    pointer-events: none;
 }
 
 .stars, .stars2, .stars3 {
