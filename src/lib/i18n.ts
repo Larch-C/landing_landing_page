@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, createContext, useContext, useMemo, ReactNode, createElement } from 'react'
 
 export interface Translations {
   [key: string]: any
@@ -322,66 +322,84 @@ const translations: Record<string, Translations> = {
 export const supportedLocales = ['zh-CN', 'en-US', 'ja-JP']
 export const defaultLocale = 'zh-CN'
 
-export function useI18n() {
-  const [locale, setLocale] = useState(defaultLocale)
-  const [isLoaded, setIsLoaded] = useState(false)
+interface I18nContextValue {
+  locale: string
+  isLoaded: boolean
+  t: (key: string) => string
+  changeLocale: (newLocale: string) => void
+}
+
+const I18nContext = createContext<I18nContextValue | null>(null)
+
+export function I18nProvider({ children }: { children: ReactNode }) {
+  const [locale, setLocale] = useState<string>(defaultLocale)
+  const [isLoaded, setIsLoaded] = useState<boolean>(false)
 
   useEffect(() => {
     // Get saved locale from localStorage or detect browser language
-    const savedLocale = localStorage.getItem('locale')
-    const browserLang = navigator.language || navigator.languages?.[0]
-    
+    const savedLocale = typeof window !== 'undefined' ? localStorage.getItem('locale') : null
+    const browserLang = typeof window !== 'undefined' ? (navigator.language || navigator.languages?.[0]) : null
+
     let initialLocale = savedLocale || browserLang || defaultLocale
-    
-    // Check if the locale is supported
     if (!supportedLocales.includes(initialLocale)) {
-      // Try to match with the main language part
-      const mainLang = initialLocale.split('-')[0]
+      const mainLang = (initialLocale as string).split('-')[0]
       const matchedLocale = supportedLocales.find(lang => lang.startsWith(mainLang))
       initialLocale = matchedLocale || defaultLocale
     }
-    
+
     setLocale(initialLocale)
     setIsLoaded(true)
-    
-    // Update document language and font
-    document.documentElement.lang = initialLocale
-    document.documentElement.classList.remove('lang-zh-CN', 'lang-en-US', 'lang-ja-JP')
-    document.documentElement.classList.add(`lang-${initialLocale}`)
+
+    if (typeof document !== 'undefined') {
+      document.documentElement.lang = initialLocale
+      document.documentElement.classList.remove('lang-zh-CN', 'lang-en-US', 'lang-ja-JP')
+      document.documentElement.classList.add(`lang-${initialLocale}`)
+    }
   }, [])
 
   const changeLocale = (newLocale: string) => {
-    if (supportedLocales.includes(newLocale)) {
-      setLocale(newLocale)
+    if (!supportedLocales.includes(newLocale)) return
+    setLocale(newLocale)
+    if (typeof window !== 'undefined') {
       localStorage.setItem('locale', newLocale)
-      
-      // Update document language and font
+    }
+    if (typeof document !== 'undefined') {
       document.documentElement.lang = newLocale
       document.documentElement.classList.remove('lang-zh-CN', 'lang-en-US', 'lang-ja-JP')
       document.documentElement.classList.add(`lang-${newLocale}`)
     }
   }
 
-  const t = (key: string): string => {
-    const keys = key.split('.')
-    let result: any = translations[locale]
-    
-    for (const k of keys) {
-      if (result && result[k] !== undefined) {
-        result = result[k]
-      } else {
-        console.warn(`Translation key "${key}" not found for locale "${locale}"`)
-        return key
+  const t = useMemo(() => {
+    return (key: string): string => {
+      const keys = key.split('.')
+      let result: any = translations[locale]
+      for (const k of keys) {
+        if (result && result[k] !== undefined) {
+          result = result[k]
+        } else {
+          // console.warn(`Translation key "${key}" not found for locale "${locale}"`)
+          return key
+        }
       }
+      return typeof result === 'string' ? result : key
     }
-    
-    return typeof result === 'string' ? result : key
+  }, [locale])
+
+  const value: I18nContextValue = {
+    locale,
+    isLoaded,
+    t,
+    changeLocale,
   }
 
-  return {
-    locale,
-    changeLocale,
-    t,
-    isLoaded
+  return createElement(I18nContext.Provider, { value }, children)
+}
+
+export function useI18n(): I18nContextValue {
+  const ctx = useContext(I18nContext)
+  if (!ctx) {
+    throw new Error('useI18n must be used within an I18nProvider')
   }
+  return ctx
 }
