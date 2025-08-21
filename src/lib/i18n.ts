@@ -6,6 +6,9 @@ export interface Translations {
 
 const translations: Record<string, Translations> = {
   'zh-CN': {
+    common: {
+      loading: '加载中...'
+    },
     language: '简体中文',
     nav: {
       quickStart: '快速上手',
@@ -106,6 +109,9 @@ const translations: Record<string, Translations> = {
     }
   },
   'en-US': {
+    common: {
+      loading: 'Loading...'
+    },
     language: 'English',
     nav: {
       quickStart: 'Quick Start',
@@ -206,6 +212,9 @@ const translations: Record<string, Translations> = {
     }
   },
   'ja-JP': {
+    common: {
+      loading: '読み込み中...'
+    },
     language: '日本語',
     nav: {
       quickStart: 'クイックスタート',

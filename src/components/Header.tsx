@@ -80,7 +80,7 @@ export default function Header() {
               {t('nav.github')}
             </Link>
           </li>
-          <li className="language-selector relative">
+          <li className={`language-selector relative ${isLanguageOpen ? 'active' : ''}`}>
             <div 
               className="selected-language flex items-center gap-2 px-2 py-1 rounded hover:bg-white/5 text-[var(--light-text-color)]"
               onClick={() => setIsLanguageOpen(!isLanguageOpen)}
