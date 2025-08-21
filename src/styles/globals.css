@@ -1043,7 +1043,7 @@ html[lang="ja-JP"] {
     position: fixed;
     inset: 0;
     overflow: hidden;
-    z-index: -10;
+    z-index: 0;
     background: linear-gradient(to bottom, #2e4f83 0%, #24446f 60%, #1a2f54 100%);
 }
 
